@@ -83,14 +83,14 @@ def main(page: ft.Page):
 
     # Estilo de botón para un aspecto más limpio
     button_style = {
-        "width": 380,
+        "width": 450,
         "bgcolor": "#1E1E1E",
         "color": "white",
         "style": ft.ButtonStyle(
             shape=ft.RoundedRectangleBorder(radius=5),
             elevation=0,
             side=ft.BorderSide(1, "white24"),
-        )
+        ),
     }
 
     # Título principal
@@ -100,37 +100,103 @@ def main(page: ft.Page):
         weight=ft.FontWeight.BOLD
     )
 
-    # Botones con estilo uniforme (eliminado el botón 7)
+    # Botones con estilo uniforme y texto alineado a la izquierda
     botones = [
         ft.ElevatedButton(
-            "1. Eliminar archivos temporales (C:\\Windows\\Temp)", 
+            content=ft.Row(
+                [ft.Text("1. Eliminar archivos temporales (C:\\Windows\\Temp)")],
+                alignment=ft.MainAxisAlignment.START,
+                expand=True
+            ),
             on_click=on_borrar_temp_windows,
-            **button_style
+            width=450,
+            bgcolor="#1E1E1E",
+            color="white",
+            style=ft.ButtonStyle(
+                shape=ft.RoundedRectangleBorder(radius=5),
+                elevation=0,
+                side=ft.BorderSide(1, "white24"),
+            )
         ),
         ft.ElevatedButton(
-            "2. Eliminar archivos temporales locales (%LOCALAPPDATA%\\Temp)", 
+            content=ft.Row(
+                [ft.Text("2. Eliminar archivos temporales locales (%LOCALAPPDATA%\\Temp)")],
+                alignment=ft.MainAxisAlignment.START,
+                expand=True
+            ),
             on_click=on_borrar_temp_local,
-            **button_style
+            width=450,
+            bgcolor="#1E1E1E",
+            color="white",
+            style=ft.ButtonStyle(
+                shape=ft.RoundedRectangleBorder(radius=5),
+                elevation=0,
+                side=ft.BorderSide(1, "white24"),
+            )
         ),
         ft.ElevatedButton(
-            "3. Configurar IP dinámica (DHCP)", 
+            content=ft.Row(
+                [ft.Text("3. Configurar IP dinámica (DHCP)")],
+                alignment=ft.MainAxisAlignment.START,
+                expand=True
+            ),
             on_click=on_configurar_dhcp,
-            **button_style
+            width=450,
+            bgcolor="#1E1E1E",
+            color="white",
+            style=ft.ButtonStyle(
+                shape=ft.RoundedRectangleBorder(radius=5),
+                elevation=0,
+                side=ft.BorderSide(1, "white24"),
+            )
         ),
         ft.ElevatedButton(
-            "4. Asignar IP estática - Hogar (192.168.1.200)", 
+            content=ft.Row(
+                [ft.Text("4. Asignar IP estática - Hogar (192.168.1.200)")],
+                alignment=ft.MainAxisAlignment.START,
+                expand=True
+            ),
             on_click=on_configurar_ip_hogar,
-            **button_style
+            width=450,
+            bgcolor="#1E1E1E",
+            color="white",
+            style=ft.ButtonStyle(
+                shape=ft.RoundedRectangleBorder(radius=5),
+                elevation=0,
+                side=ft.BorderSide(1, "white24"),
+            )
         ),
         ft.ElevatedButton(
-            "5. Asignar IP estática - Oficina (192.168.100.200)", 
+            content=ft.Row(
+                [ft.Text("5. Asignar IP estática - Oficina (192.168.100.200)")],
+                alignment=ft.MainAxisAlignment.START,
+                expand=True
+            ),
             on_click=on_configurar_ip_oficina,
-            **button_style
+            width=450,
+            bgcolor="#1E1E1E",
+            color="white",
+            style=ft.ButtonStyle(
+                shape=ft.RoundedRectangleBorder(radius=5),
+                elevation=0,
+                side=ft.BorderSide(1, "white24"),
+            )
         ),
         ft.ElevatedButton(
-            "6. Vaciar Papelera de reciclaje", 
+            content=ft.Row(
+                [ft.Text("6. Vaciar Papelera de reciclaje")],
+                alignment=ft.MainAxisAlignment.START,
+                expand=True
+            ),
             on_click=on_vaciar_papelera,
-            **button_style
+            width=450,
+            bgcolor="#1E1E1E",
+            color="white",
+            style=ft.ButtonStyle(
+                shape=ft.RoundedRectangleBorder(radius=5),
+                elevation=0,
+                side=ft.BorderSide(1, "white24"),
+            )
         ),
     ]
 
@@ -146,12 +212,12 @@ def main(page: ft.Page):
     contenedor_imagen = ft.Container(
         content=ft.Image(
             src="src/assets/tech.png",
-            width=340,
-            height=340,
+            width=300,
+            height=300,
             fit=ft.ImageFit.CONTAIN
         ),
         alignment=ft.alignment.top_center,  # Alineación superior
-        margin=ft.margin.only(top=70),      # Margen superior para alinear con botones
+        margin=ft.margin.only(top=40),      # Margen superior para alinear con botones
         opacity=0.7,                        # Añadida transparencia a la imagen
     )
 
