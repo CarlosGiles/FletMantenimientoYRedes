@@ -23,7 +23,8 @@ Todo ello usando comandos nativos de Windows (`netsh`, `ipconfig`, PowerShell, e
 4. [Uso de la aplicación](#️-uso-de-la-aplicación)  
 5. [Empaquetar la app (opcional)](#-empaquetar-la-app-opcional)  
 6. [Run the app](#run-the-app)  
-7. [Referencias técnicas](#-referencias-técnicas)  
+7. [Referencias técnicas](#-referencias-técnicas)
+8. [Consideraciones finales](#consideraciones-finales)
 8. [Licencia](#-licencia)
 
 ---
@@ -193,6 +194,13 @@ For more details on running the app, refer to the [Getting Started Guide](https:
 - **netsh**: [Documentación Microsoft](https://docs.microsoft.com/en-us/windows-server/networking/technologies/netsh/netsh)
 - **ipconfig**: Para liberar y renovar direcciones IP.
 - **PowerShell**: Para vaciar la papelera (`Clear-RecycleBin`).
+
+---
+
+## Consideraciones Finales
+- **Rutas Largas en Windows**: Al compilar, ten en cuenta activar el Modo Desarrollador y minimizar la profundidad de las rutas.
+- **Dependencias**: Asegúrate de incluir en el `pyproject.toml` cada librería externa (p. ej. `yt_dlp`) para que se empaquete correctamente.
+- **Escalabilidad**: Dado que Flet usa `Flutter` por debajo, se pueden añadir animaciones, más UI, y adaptarlo a web, escritorio, y móvil.
 
 ---
 
