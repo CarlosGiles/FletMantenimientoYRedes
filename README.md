@@ -1,3 +1,5 @@
+![portadatech](https://github.com/user-attachments/assets/70b9f5d1-36c1-47c8-84aa-0c22263297c4)
+
 # FletMantenimientoYRedes
 
 Aplicación de escritorio desarrollada con [Flet](https://docs.flet.dev/) en Python, diseñada para **automatizar tareas de mantenimiento y configuración de red en Windows**. Provee una **interfaz gráfica** sencilla para:
