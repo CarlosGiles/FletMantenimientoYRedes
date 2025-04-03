@@ -1,4 +1,4 @@
-# src/main.py
+# FletMantenimientoYRedes/src/main.py
 
 import flet as ft
 from interfaz import main
