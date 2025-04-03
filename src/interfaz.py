@@ -12,7 +12,7 @@ from mantenimiento import (
 )
 
 def main(page: ft.Page):
-    page.icon = "assets/tech_icon.png"
+    page.icon = "assets/icon.png"
     page.title = "Mantenimiento y Configuración de Red"
     page.vertical_alignment = ft.MainAxisAlignment.START
     page.theme_mode = ft.ThemeMode.DARK # si no se agrega toma el del sistema
@@ -212,7 +212,7 @@ def main(page: ft.Page):
     # Contenedor para la imagen alineada con los botones
     contenedor_imagen = ft.Container(
         content=ft.Image(
-            src="src/assets/tech.png",
+            src="assets/tech.png",
             width=300,
             height=300,
             fit=ft.ImageFit.CONTAIN
