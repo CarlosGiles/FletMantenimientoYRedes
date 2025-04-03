@@ -1,44 +1,92 @@
-# Fletmantenimientoyredes app
+# FletMantenimientoYRedes
 
-## Run the app
+Aplicación de escritorio desarrollada con [Flet](https://docs.flet.dev/) en Python, diseñada para **automatizar tareas de mantenimiento y configuración de red en Windows**. Provee una **interfaz gráfica** sencilla para:
 
-### uv
+- Eliminar archivos temporales
+- Configurar IP dinámica por DHCP
+- Asignar IP estática (hogar u oficina)
+- Vaciar la papelera de reciclaje
 
-Run as a desktop app:
+Todo ello usando comandos nativos de Windows (`netsh`, `ipconfig`, PowerShell, etc.).
 
-```
-uv run flet run
-```
+---
 
-Run as a web app:
+## ⚙️ Requisitos y dependencias
 
-```
-uv run flet run --web
-```
+1. **Python 3.9+** (recomendado) instalado en el sistema.
+2. **Biblioteca Flet**: Para la interfaz gráfica.
+3. **Sistema operativo Windows** con acceso a:
+   - `netsh` (para configurar la red)
+   - `ipconfig` (para liberar y renovar IP)
+   - `powershell` (para vaciar la papelera)
 
-### Poetry
+---
 
-Install dependencies from `pyproject.toml`:
-
-```
-poetry install
-```
-
-Run as a desktop app:
+## 📂 Estructura de archivos
 
 ```
-poetry run flet run
+FletMantenimientoYRedes/
+│
+├─ src/
+│  ├─ mantenimiento.py     # Lógica de mantenimiento (elimina temp, asigna IP, etc.)
+│  ├─ interfaz.py          # Interfaz Flet (UI)
+│  ├─ main.py              # Punto de entrada (ejecuta la app)
+│  └─ assets/
+│       └─ tech.png        # Imagen usada en la UI
+│
+├─ README.md               # Este archivo
+├─ .gitignore              # Ignora env, __pycache__, etc.
+└─ ...
 ```
 
-Run as a web app:
+---
 
-```
-poetry run flet run --web
-```
+## 🚀 Cómo clonar y ejecutar el proyecto
 
-For more details on running the app, refer to the [Getting Started Guide](https://flet.dev/docs/getting-started/).
+1. **Clonar este repositorio**:
+   ```bash
+   git clone https://github.com/tu-usuario/FletMantenimientoYRedes.git
+   cd FletMantenimientoYRedes
+   ```
+2. **Crear y/o activar un entorno virtual** (opcional pero recomendado):
+   ```bash
+   python -m venv env
+   source env/bin/activate  # En Linux/Mac
+   # o en Windows:
+   .\env\Scripts\activate
+   ```
+3. **Instalar dependencias**:
+   ```bash
+   pip install flet
+   ```
+4. **Ejecutar la aplicación**:
+   ```bash
+   python src/main.py
+   ```
+5. Se abrirá una **ventana de escritorio** en modo oscuro con todas las opciones de mantenimiento.
 
-## Build the app
+> **Nota**: Si en vez de la ventana nativa te abre el navegador, asegúrate de estar ejecutando `python src/main.py` y no `flet run`. De esta forma se fuerza el modo de escritorio.
+
+---
+
+## 🖥️ Uso de la aplicación
+
+Una vez iniciada, verás el menú principal con botones para:
+
+1. **Eliminar archivos temporales (C:\Windows\Temp)**
+2. **Eliminar archivos temporales locales (%LOCALAPPDATA%\Temp)**
+3. **Configurar IP dinámica (DHCP)**
+4. **Asignar IP estática - Hogar** (192.168.1.200)
+5. **Asignar IP estática - Oficina** (192.168.100.200)
+6. **Vaciar Papelera de reciclaje**
+
+Al presionar cada botón, la aplicación ejecuta la acción en un **hilo de fondo**, para que la interfaz no se congele. El resultado se muestra en la parte inferior (texto de `resultado_text`).
+
+---
+
+## 📦 Empaquetar la app (opcional)
+
+Si deseas **distribuir** la aplicación sin requerir que los usuarios instalen Python y Flet manualmente, puedes:
 
 ### Android
 
@@ -79,3 +127,65 @@ flet build windows -v
 ```
 
 For more details on building Windows package, refer to the [Windows Packaging Guide](https://flet.dev/docs/publish/windows/).
+
+---
+
+## Run the app
+
+### uv
+
+Run as a desktop app:
+
+```
+uv run flet run
+```
+
+Run as a web app:
+
+```
+uv run flet run --web
+```
+
+### Poetry
+
+Install dependencies from `pyproject.toml`:
+
+```
+poetry install
+```
+
+Run as a desktop app:
+
+```
+poetry run flet run
+```
+
+Run as a web app:
+
+```
+poetry run flet run --web
+```
+
+For more details on running the app, refer to the [Getting Started Guide](https://flet.dev/docs/getting-started/).
+
+---
+
+## 🔧 Referencias técnicas
+
+- **Flet**: [Documentación oficial](https://docs.flet.dev/)
+- **netsh**: [Documentación Microsoft](https://docs.microsoft.com/en-us/windows-server/networking/technologies/netsh/netsh)
+- **ipconfig**: Para liberar y renovar direcciones IP.
+- **PowerShell**: Para vaciar la papelera (`Clear-RecycleBin`).
+
+---
+
+## 📝 Licencia
+
+> Indica aquí tu licencia (MIT, GPL, etc.) si corresponde.
+
+---
+
+**¡Gracias por usar FletMantenimientoYRedes!**
+
+Siéntete libre de hacer *fork*, proponer cambios o mejoras en *pull requests*.  
+
