@@ -12,9 +12,10 @@ from mantenimiento import (
 )
 
 def main(page: ft.Page):
+    page.icon = "assets/tech_icon.png"
     page.title = "Mantenimiento y Configuración de Red"
     page.vertical_alignment = ft.MainAxisAlignment.START
-    page.theme_mode = ft.ThemeMode.DARK
+    page.theme_mode = ft.ThemeMode.DARK # si no se agrega toma el del sistema
 
     # Configuración de la ventana
     page.window_maximized = False
