@@ -72,10 +72,6 @@ def main(page: ft.Page):
             page.update()
         threading.Thread(target=run).start()
 
-    # Función para salir correctamente
-    def on_salir(e):
-        page.window_close()
-
     # Manejador de evento para cierre de ventana
     def on_window_event(e):
         if e.data == "close":
@@ -102,7 +98,7 @@ def main(page: ft.Page):
         weight=ft.FontWeight.BOLD
     )
 
-    # Botones con estilo uniforme
+    # Botones con estilo uniforme (eliminado el botón 7)
     botones = [
         ft.ElevatedButton(
             "1. Eliminar archivos temporales (C:\\Windows\\Temp)", 
@@ -134,11 +130,6 @@ def main(page: ft.Page):
             on_click=on_vaciar_papelera,
             **button_style
         ),
-        ft.ElevatedButton(
-            "7. Salir", 
-            on_click=on_salir,
-            **button_style
-        ),
     ]
 
     # Columna izquierda con opciones
@@ -158,8 +149,8 @@ def main(page: ft.Page):
             fit=ft.ImageFit.CONTAIN
         ),
         alignment=ft.alignment.top_center,  # Alineación superior
-        margin=ft.margin.only(top=50),      # Margen superior para alinear con botones
-        opacity=0.7
+        margin=ft.margin.only(top=70),      # Margen superior para alinear con botones
+        opacity=0.7,                        # Añadida transparencia a la imagen
     )
 
     # Row principal que contiene ambos elementos
