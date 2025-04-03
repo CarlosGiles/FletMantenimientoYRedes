@@ -15,6 +15,19 @@ Todo ello usando comandos nativos de Windows (`netsh`, `ipconfig`, PowerShell, e
 
 ---
 
+## Tabla de Contenido
+
+1. [Requisitos y dependencias](#️-requisitos-y-dependencias)  
+2. [Estructura de archivos](#-estructura-de-archivos)  
+3. [Cómo clonar y ejecutar el proyecto](#-cómo-clonar-y-ejecutar-el-proyecto)  
+4. [Uso de la aplicación](#️-uso-de-la-aplicación)  
+5. [Empaquetar la app (opcional)](#-empaquetar-la-app-opcional)  
+6. [Run the app](#run-the-app)  
+7. [Referencias técnicas](#-referencias-técnicas)  
+8. [Licencia](#-licencia)
+
+---
+
 ## ⚙️ Requisitos y dependencias
 
 1. **Python 3.9+** (recomendado) instalado en el sistema.
