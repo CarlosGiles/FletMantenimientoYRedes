@@ -63,7 +63,7 @@ FletMantenimientoYRedes/
 
 1. **Clonar este repositorio**:
    ```bash
-   git clone https://github.com/tu-usuario/FletMantenimientoYRedes.git
+   git clone https://github.com/CarlosGiles/FletMantenimientoYRedes.git
    cd FletMantenimientoYRedes
    ```
 2. **Crear y/o activar un entorno virtual** (opcional pero recomendado):
